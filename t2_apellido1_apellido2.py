@@ -122,17 +122,33 @@ def brian_vs_kevin_bsb(archivo):
     dicc = {}
     brian = 0
     kevin = 0
-    principal = []
+    datos = []
+    cont = 0
     for x in csv:
-        datos = x.strip().split(';')
-        if datos[0] != 'anio' and int(datos[0]) >= 1996:
-            dicc[datos[0]] = []
-            if 'Brian' in datos[1]:
-                print("si")
-                brian += 1
-        dicc[datos[0]] = brian
         
+        datos.append(x.strip().split(';'))
+        if datos[cont][0] != 'anio' and int(datos[cont][0]) >= 1996:
+            dicc[datos[cont][0]] = []
+        cont += 1
+    for x in dicc:
+        año = x
+        
+        for y in datos:
+            if año == y[0]:
+                
+                if 'Brian' in y[1]:
+                    brian += 1
+                elif 'Kevin' in y[1]:
+                    kevin += 1
+        print("kevin: ", kevin)
+        print("BRian: ", brian)
+        if brian > kevin:
+            dicc[año] = 'Brian'
+        else: dicc[año] = 'Kevin'
+        brian = 0
+        kevin = 0
     print(dicc)
+    
     csv.close()
     
 # print(leer_guaguas(archivo))
@@ -142,4 +158,4 @@ def brian_vs_kevin_bsb(archivo):
 # print(guaguas_sex_dicc(archivo))
 #guaguas_escribir_archivo(archivo)
 #print(efecto_romane('Yovanka',archivo))
-brian_vs_kevin_bsb(archivo)
+print(brian_vs_kevin_bsb(archivo))
