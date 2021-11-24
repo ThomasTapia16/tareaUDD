@@ -1,4 +1,5 @@
-hola = [[5],[2],[3],[1]]
+dicc = {"sexo":[]}
 
+dicc['sexo'].append("dsadas")
 
-print(hola[3][0])
+print(dicc['sexo'][0])
