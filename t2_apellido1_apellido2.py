@@ -140,16 +140,16 @@ def brian_vs_kevin_bsb(archivo):
                     brian += 1
                 elif 'Kevin' in y[1]:
                     kevin += 1
-        print("kevin: ", kevin)
-        print("BRian: ", brian)
+        
         if brian > kevin:
             dicc[año] = 'Brian'
         else: dicc[año] = 'Kevin'
         brian = 0
         kevin = 0
-    print(dicc)
+    
     
     csv.close()
+    return dicc
     
 # print(leer_guaguas(archivo))
 # print(guaguas_top_2020(archivo))
