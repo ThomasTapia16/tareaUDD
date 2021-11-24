@@ -151,11 +151,11 @@ def brian_vs_kevin_bsb(archivo):
     csv.close()
     return dicc
     
-# print(leer_guaguas(archivo))
-# print(guaguas_top_2020(archivo))
-# print(guaguas_por_año(archivo))
-# print(guaguas_sexo_anio('2020',archivo))
-# print(guaguas_sex_dicc(archivo))
-#guaguas_escribir_archivo(archivo)
-#print(efecto_romane('Yovanka',archivo))
+print(leer_guaguas(archivo))
+print(guaguas_top_2020(archivo))
+print(guaguas_por_año(archivo))
+print(guaguas_sexo_anio('2020',archivo))
+print(guaguas_sex_dicc(archivo))
+guaguas_escribir_archivo(archivo)
+print(efecto_romane('Yovanka',archivo))
 print(brian_vs_kevin_bsb(archivo))
